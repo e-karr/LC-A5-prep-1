@@ -43,12 +43,14 @@ function init() {
     let coloredText = document.getElementById("colored-text"); // "Color Palette Random Generator"
     let button = document.getElementById("get-colors");
     let paletteName = document.getElementById("palette-name");
-    let colorBlocks = []; // To store all five div elements
-    let colorCodes = []; // To store all five p elements
-    for (let i=0; i < 5; i++) {
-        colorBlocks.push(document.getElementById("color" + i));
-        colorCodes.push(document.getElementById("code" + i));
-    }
+    let colorBlocks = document.getElementsByClassName("color-block");
+    let colorCodes = document.getElementsByClassName("color-code");
+    // let colorBlocks = []; // To store all five div elements
+    // let colorCodes = []; // To store all five p elements
+    // for (let i=0; i < 5; i++) {
+    //     colorBlocks.push(document.getElementById("color" + i));
+    //     colorCodes.push(document.getElementById("code" + i));
+    // }
 
 
     /*** Event listeners and functions ***/
@@ -75,6 +77,7 @@ function init() {
         header.style.backgroundColor = currentPalette.colors[0];
         coloredText.style.color = currentPalette.colors[4];
         paletteName.innerHTML = currentPalette.name;
+
         for (let i=0; i < 5; i++) {
             colorBlocks[i].style.backgroundColor = currentPalette.colors[i];
             colorCodes[i].innerHTML = currentPalette.colors[i];
